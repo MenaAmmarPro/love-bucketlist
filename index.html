@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our List — the things we want to do together, checked off one by one.">
+  <title>Our List ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-bucketlist/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our List — for Mena">
+  <meta property="og:title" content="Our List ✦ Love for Mena">
+  <meta property="og:description" content="The things we want to do together, checked off one by one.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-bucketlist/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-bucketlist/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our List — the things we want to do together">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our List ✦ Love for Mena">
+  <meta name="twitter:description" content="The things we want to do together, checked off one by one.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-bucketlist/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Our List">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✓ Our List</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#list">The list</a>
+      <a href="#add">Add something</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero list-hero">
+      <p class="eyebrow">TWO PEOPLE, ONE LIST</p>
+      <div class="moon" aria-hidden="true">✓</div>
+      <p class="small-caption">Small plans count just as much as big ones.</p>
+      <h1>Our <span>list.</span></h1>
+      <p class="hero-description">
+        Everything we've said we'd do — the far-off trips and the tiny things,
+        like making pizza at midnight. Tick them off as they happen and watch
+        the list fill up.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#list">See the list <span>♥</span></a>
+        <a class="button button-ghost" href="#add">Add something</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="list">
+      <p class="eyebrow">WHERE WE'RE UP TO</p>
+      <h2>The <span>progress.</span></h2>
+
+      <div class="progress-card">
+        <p class="progress-line"><strong id="list-done">0</strong> done of <strong id="list-total">0</strong></p>
+        <div class="progress-track"><div class="progress-bar" id="list-progress"></div></div>
+        <p class="progress-note" id="list-count"></p>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter is-active" type="button" data-cat="all">All</button>
+        <button class="filter" type="button" data-cat="places">Places</button>
+        <button class="filter" type="button" data-cat="food">Food</button>
+        <button class="filter" type="button" data-cat="together">Together</button>
+        <button class="filter" type="button" data-cat="small">Small things</button>
+      </div>
+
+      <div class="item-list" id="item-list"></div>
+      <p class="section-note" id="save-note" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="add">
+      <p class="eyebrow">ONE MORE THING</p>
+      <h2>Add to the <span>list.</span></h2>
+      <div class="list-form">
+        <label class="field">
+          <span>What do we want to do?</span>
+          <input type="text" id="add-title" maxlength="80" placeholder="Watch the sunrise from a rooftop" aria-label="List item">
+        </label>
+        <label class="field">
+          <span>Category</span>
+          <select id="add-cat" aria-label="Category">
+            <option value="places">Places</option>
+            <option value="food">Food</option>
+            <option value="together">Together</option>
+            <option value="small">Small things</option>
+          </select>
+        </label>
+        <button class="button button-primary" id="add-item" type="button">Add it to the list <span>♥</span></button>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="reset-list" type="button">Back to the original list</button>
+      </div>
+      <p class="settings-note">Saved on this device only — no tracking, no network calls.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
