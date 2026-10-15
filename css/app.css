@@ -1,0 +1,195 @@
+/* love-bucketlist — page styles (built on css/theme.css) */
+
+.list-hero {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.small-caption {
+  max-width: 44ch;
+  margin: 0.35rem auto 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- progress ---------- */
+
+.progress-card {
+  max-width: 640px;
+  margin-top: 1.4rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.progress-line {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.progress-line strong {
+  color: var(--pink);
+}
+
+.progress-track {
+  height: 10px;
+  margin-top: 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  transition: width 0.3s ease;
+}
+
+.progress-note {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- filters ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.filter {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.filter.is-active {
+  border-color: var(--pink-strong);
+  background: rgba(255, 159, 207, 0.16);
+  color: var(--text);
+}
+
+/* ---------- items ---------- */
+
+.item-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.item.is-done .item-title {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.item-check {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--pink-strong);
+  border-radius: 50%;
+  background: none;
+  color: transparent;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.item.is-done .item-check {
+  background: var(--pink-strong);
+  color: #090b20;
+}
+
+.item-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.item-title {
+  display: block;
+}
+
+.item-cat {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.item-remove {
+  flex: none;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.item-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- form ---------- */
+
+.list-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 560px;
+  margin-top: 1.4rem;
+}
+
+.field {
+  display: block;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--pink);
+}
